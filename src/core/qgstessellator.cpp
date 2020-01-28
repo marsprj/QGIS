@@ -1,4 +1,4 @@
-/***************************************************************************
+﻿/***************************************************************************
   qgstessellator.cpp
   --------------------------------------
   Date                 : July 2017
@@ -511,7 +511,7 @@ void QgsTessellator::addPolygon( const QgsPolygon &polygon, float extrusionHeigh
       QgsGeometry polygonSimplified = QgsGeometry( polygonNew->clone() ).simplify( 0.001 );
       if ( polygonSimplified.isNull() )
       {
-        QgsMessageLog::logMessage( QObject::tr( "geometry simplification failed - skipping" ), QObject::tr( "3D" ) );
+        QgsMessageLog::logMessage( QObject::tr( "geometry simplification failed - skipping" ), QObject::tr( " 3D " ) );
         return;
       }
       const QgsPolygon *polygonSimplifiedData = qgsgeometry_cast<const QgsPolygon *>( polygonSimplified.constGet() );
@@ -519,7 +519,7 @@ void QgsTessellator::addPolygon( const QgsPolygon &polygon, float extrusionHeigh
       {
         // Failed to fix that. It could be a really tiny geometry... or maybe they gave us
         // geometry in unprojected lat/lon coordinates
-        QgsMessageLog::logMessage( QObject::tr( "geometry's coordinates are too close to each other and simplification failed - skipping" ), QObject::tr( "3D" ) );
+        QgsMessageLog::logMessage( QObject::tr( "geometry's coordinates are too close to each other and simplification failed - skipping" ), QObject::tr( " 3D " ) );
         return;
       }
       else
@@ -531,7 +531,7 @@ void QgsTessellator::addPolygon( const QgsPolygon &polygon, float extrusionHeigh
     if ( !_check_intersecting_rings( *polygonNew ) )
     {
       // skip the polygon - it would cause a crash inside poly2tri library
-      QgsMessageLog::logMessage( QObject::tr( "polygon rings self-intersect or intersect each other - skipping" ), QObject::tr( "3D" ) );
+      QgsMessageLog::logMessage( QObject::tr( "polygon rings self-intersect or intersect each other - skipping" ), QObject::tr( " 3D " ) );
       return;
     }
 
@@ -608,7 +608,7 @@ void QgsTessellator::addPolygon( const QgsPolygon &polygon, float extrusionHeigh
     }
     catch ( ... )
     {
-      QgsMessageLog::logMessage( QObject::tr( "Triangulation failed. Skipping polygon…" ), QObject::tr( "3D" ) );
+      QgsMessageLog::logMessage( QObject::tr( "Triangulation failed. Skipping polygon… " ), QObject::tr( " 3D " ) );
     }
 
     for ( int i = 0; i < polylinesToDelete.count(); ++i )

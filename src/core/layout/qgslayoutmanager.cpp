@@ -421,7 +421,7 @@ bool QgsLayoutManagerModel::setData( const QModelIndex &index, const QVariant &v
   if ( layoutNames.contains( value.toString() ) )
   {
     //name exists!
-    QMessageBox::warning( nullptr, tr( "Rename Layout" ), tr( "There is already a layout named “%1”." ).arg( value.toString() ) );
+    QMessageBox::warning( nullptr, tr( "Rename Layout" ), tr( "There is already a layout named \"%1\"." ).arg( value.toString() ) );
     return false;
   }
 

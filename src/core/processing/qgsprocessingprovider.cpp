@@ -164,7 +164,7 @@ bool QgsProcessingProvider::isSupportedOutputValue( const QVariant &outputValue,
 
     if ( !supportedOutputVectorLayerExtensions().contains( extension, Qt::CaseInsensitive ) )
     {
-      error = tr( "“.%1” files are not supported as outputs for this algorithm" ).arg( extension );
+      error = tr( "\".%1\" files are not supported as outputs for this algorithm" ).arg( extension );
       return false;
     }
     return true;
@@ -175,7 +175,7 @@ bool QgsProcessingProvider::isSupportedOutputValue( const QVariant &outputValue,
     const QString extension = fi.completeSuffix();
     if ( !supportedOutputRasterLayerExtensions().contains( extension, Qt::CaseInsensitive ) )
     {
-      error = tr( "“.%1” files are not supported as outputs for this algorithm" ).arg( extension );
+      error = tr( "\".%1\" files are not supported as outputs for this algorithm" ).arg( extension );
       return false;
     }
     return true;

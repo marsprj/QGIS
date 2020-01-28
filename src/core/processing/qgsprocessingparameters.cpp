@@ -1,4 +1,4 @@
-/***************************************************************************
+﻿/***************************************************************************
                          qgsprocessingparameters.cpp
                          ---------------------------
     begin                : April 2017
@@ -1949,7 +1949,7 @@ QString QgsProcessingParameterDefinition::toolTip() const
 {
   return QStringLiteral( "<p><b>%1</b></p><p>%2</p>" ).arg(
            description(),
-           QObject::tr( "Python identifier: ‘%1’" ).arg( QStringLiteral( "<i>%1</i>" ).arg( name() ) ) );
+           QObject::tr( "Python identifier: '%1'" ).arg( QStringLiteral( "<i>%1</i>" ).arg( name() ) ) );
 }
 
 QgsProcessingParameterBoolean::QgsProcessingParameterBoolean( const QString &name, const QString &description, const QVariant &defaultValue, bool optional )

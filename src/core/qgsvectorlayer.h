@@ -1,4 +1,4 @@
-
+﻿
 /***************************************************************************
                              -------------------
     begin                : Oct 29, 2003
@@ -191,9 +191,9 @@ typedef QSet<int> QgsAttributeIds;
  * the WFS feature type. The ‘FILTER’ key value can either be a QGIS expression
  * or an OGC XML filter. If the value is set to a QGIS expression the driver will
  * turn it into OGC XML filter before passing it to the WFS server. Beware the
- * QGIS expression filter only supports” =, !=, <, >, <=, >=, AND, OR, NOT, LIKE, IS NULL”
- * attribute operators, “BBOX, Disjoint, Intersects, Touches, Crosses, Contains, Overlaps, Within”
- * spatial binary operators and the QGIS local “geomFromWKT, geomFromGML”
+ * QGIS expression filter only supports\" =, !=, <, >, <=, >=, AND, OR, NOT, LIKE, IS NULL\"
+ * attribute operators, \"BBOX, Disjoint, Intersects, Touches, Crosses, Contains, Overlaps, Within\"
+ * spatial binary operators and the QGIS local \"geomFromWKT, geomFromGML\"
  * geometry constructor functions.
  *
  * \subsection oapif OGC API - Features data provider (oapif)

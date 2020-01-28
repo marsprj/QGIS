@@ -1,4 +1,4 @@
-/***************************************************************************
+﻿/***************************************************************************
                          qgsunittypes.cpp
                          --------------
     begin                : February 2016
@@ -2059,10 +2059,10 @@ QString QgsUnitTypes::formatAngle( double angle, int decimals, QgsUnitTypes::Ang
       unitLabel = QObject::tr( " gon", "angle" );
       break;
     case AngleMinutesOfArc:
-      unitLabel = QObject::tr( "′", "angle minutes" );
+      unitLabel = QObject::tr( "'", "angle minutes" );
       break;
     case AngleSecondsOfArc:
-      unitLabel = QObject::tr( "″", "angle seconds" );
+      unitLabel = QObject::tr( "\"", "angle seconds" );
       break;
     case AngleTurn:
       unitLabel = QObject::tr( " tr", "angle turn" );

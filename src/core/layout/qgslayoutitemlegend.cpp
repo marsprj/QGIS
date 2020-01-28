@@ -1,4 +1,4 @@
-/***************************************************************************
+﻿/***************************************************************************
                          qgslayoutitemlegend.cpp
                          -----------------------
     begin                : October 2017
@@ -658,7 +658,7 @@ QString QgsLayoutItemLegend::displayName() const
   }
   if ( text.length() > 25 )
   {
-    return tr( "%1…" ).arg( text.left( 25 ) );
+    return tr( " %1… " ).arg( text.left( 25 ) );
   }
   else
   {

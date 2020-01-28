@@ -1,4 +1,4 @@
-/***************************************************************************
+﻿/***************************************************************************
                               qgsexpression.cpp
                              -------------------
     begin                : August 2011
@@ -970,7 +970,7 @@ QString QgsExpression::formatPreviewString( const QVariant &value, const bool ht
       mapStr.append( QStringLiteral( " '%1': %2" ).arg( it.key(), formatPreviewString( it.value(), htmlOutput ) ) );
       if ( mapStr.length() > MAX_PREVIEW - 3 )
       {
-        mapStr = tr( "%1…" ).arg( mapStr.left( MAX_PREVIEW - 2 ) );
+        mapStr = tr( " %1… " ).arg( mapStr.left( MAX_PREVIEW - 2 ) );
         break;
       }
     }
@@ -994,7 +994,7 @@ QString QgsExpression::formatPreviewString( const QVariant &value, const bool ht
       listStr.append( formatPreviewString( arrayValue, htmlOutput ) );
       if ( listStr.length() > MAX_PREVIEW - 3 )
       {
-        listStr = QString( tr( "%1…" ) ).arg( listStr.left( MAX_PREVIEW - 2 ) );
+        listStr = QString( tr( " %1… " ) ).arg( listStr.left( MAX_PREVIEW - 2 ) );
         break;
       }
     }
