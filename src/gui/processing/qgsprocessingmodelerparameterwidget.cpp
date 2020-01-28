@@ -335,7 +335,7 @@ void QgsProcessingModelerParameterWidget::populateSources( const QStringList &co
         const QString outputDescription = alg.algorithm()->outputDefinition( source.outputName() )->description();
         const QString childDescription = alg.description();
 
-        mChildOutputCombo->addItem( tr( "“%1” from algorithm “%2”" ).arg( outputDescription, childDescription ), QStringList() << source.outputChildId() << source.outputName() );
+        mChildOutputCombo->addItem( tr( "\"%1\" from algorithm \"%2\"" ).arg( outputDescription, childDescription ), QStringList() << source.outputChildId() << source.outputName() );
         break;
       }
 

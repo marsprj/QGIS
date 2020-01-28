@@ -602,7 +602,7 @@ void QgsLayoutMapGridWidget::setGridItems()
 
   //CRS button
   QgsCoordinateReferenceSystem gridCrs = mMapGrid->crs();
-  QString crsButtonText = gridCrs.isValid() ? gridCrs.authid() : tr( "Change…" );
+  QString crsButtonText = gridCrs.isValid() ? gridCrs.authid() : tr( "Change… " );
   mMapGridCRSButton->setText( crsButtonText );
 }
 

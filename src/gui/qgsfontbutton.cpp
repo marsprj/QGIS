@@ -1,4 +1,4 @@
-/***************************************************************************
+﻿/***************************************************************************
      qgsfontbutton.h
      ---------------
     Date                 : May 2017
@@ -614,7 +614,7 @@ void QgsFontButton::prepareMenu()
   }
   mMenu->addMenu( recentFontMenu );
 
-  QAction *configureAction = new QAction( tr( "Configure Format…" ), this );
+  QAction *configureAction = new QAction( tr( "Configure Format… " ), this );
   mMenu->addAction( configureAction );
   connect( configureAction, &QAction::triggered, this, &QgsFontButton::showSettingsDialog );
 

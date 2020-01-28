@@ -182,7 +182,7 @@ QgsStyleManagerDialog::QgsStyleManagerDialog( QgsStyle *style, QWidget *parent, 
 
   tabItemType->setDocumentMode( true );
   searchBox->setShowSearchIcon( true );
-  searchBox->setPlaceholderText( tr( "Filter symbols…" ) );
+  searchBox->setPlaceholderText( tr( "Filter symbols… " ) );
 
   connect( this, &QDialog::finished, this, &QgsStyleManagerDialog::onFinished );
   connect( listItems, &QAbstractItemView::doubleClicked, this, &QgsStyleManagerDialog::editItem );
@@ -208,19 +208,19 @@ QgsStyleManagerDialog::QgsStyleManagerDialog( QgsStyle *style, QWidget *parent, 
   }
 
   QMenu *shareMenu = new QMenu( tr( "Share Menu" ), this );
-  QAction *exportAction = new QAction( tr( "Export Item(s)…" ), this );
+  QAction *exportAction = new QAction( tr( "Export Item(s)… " ), this );
   exportAction->setIcon( QIcon( QgsApplication::iconPath( "mActionFileSave.svg" ) ) );
   shareMenu->addAction( exportAction );
   if ( !mReadOnly )
   {
-    QAction *importAction = new QAction( tr( "Import Item(s)…" ), this );
+    QAction *importAction = new QAction( tr( "Import Item(s)… " ), this );
     importAction->setIcon( QIcon( QgsApplication::iconPath( "mActionFileOpen.svg" ) ) );
     shareMenu->addAction( importAction );
     connect( importAction, &QAction::triggered, this, &QgsStyleManagerDialog::importItems );
   }
   if ( mStyle != QgsStyle::defaultStyle() )
   {
-    mActionCopyToDefault = new QAction( tr( "Copy Selection to Default Style…" ), this );
+    mActionCopyToDefault = new QAction( tr( "Copy Selection to Default Style… " ), this );
     shareMenu->addAction( mActionCopyToDefault );
     connect( mActionCopyToDefault, &QAction::triggered, this, &QgsStyleManagerDialog::copyItemsToDefault );
     connect( mCopyToDefaultButton, &QPushButton::clicked, this, &QgsStyleManagerDialog::copyItemsToDefault );
@@ -232,7 +232,7 @@ QgsStyleManagerDialog::QgsStyleManagerDialog( QgsStyle *style, QWidget *parent, 
 
   mActionCopyItem = new QAction( tr( "Copy Item" ), this );
   connect( mActionCopyItem, &QAction::triggered, this, &QgsStyleManagerDialog::copyItem );
-  mActionPasteItem = new QAction( tr( "Paste Item…" ), this );
+  mActionPasteItem = new QAction( tr( "Paste Item… " ), this );
   connect( mActionPasteItem, &QAction::triggered, this, &QgsStyleManagerDialog::pasteItem );
 
   shareMenu->addSeparator();
@@ -323,20 +323,20 @@ QgsStyleManagerDialog::QgsStyleManagerDialog( QgsStyle *style, QWidget *parent, 
   {
     // Menu for the "Add item" toolbutton when in colorramp mode
     QStringList rampTypes;
-    rampTypes << tr( "Gradient…" ) << tr( "Color presets…" ) << tr( "Random…" ) << tr( "Catalog: cpt-city…" );
-    rampTypes << tr( "Catalog: ColorBrewer…" );
+    rampTypes << tr( "Gradient… " ) << tr( "Color presets… " ) << tr( "Random… " ) << tr( "Catalog: cpt-city… " );
+    rampTypes << tr( "Catalog: ColorBrewer… " );
 
     mMenuBtnAddItemAll = new QMenu( this );
     mMenuBtnAddItemColorRamp = new QMenu( this );
     mMenuBtnAddItemLabelSettings = new QMenu( this );
 
-    QAction *item = new QAction( QgsApplication::getThemeIcon( QStringLiteral( "mIconPointLayer.svg" ) ), tr( "Marker…" ), this );
+    QAction *item = new QAction( QgsApplication::getThemeIcon( QStringLiteral( "mIconPointLayer.svg" ) ), tr( "Marker… " ), this );
     connect( item, &QAction::triggered, this, [ = ]( bool ) { addSymbol( QgsSymbol::Marker ); } );
     mMenuBtnAddItemAll->addAction( item );
-    item = new QAction( QgsApplication::getThemeIcon( QStringLiteral( "mIconLineLayer.svg" ) ), tr( "Line…" ), this );
+    item = new QAction( QgsApplication::getThemeIcon( QStringLiteral( "mIconLineLayer.svg" ) ), tr( "Line… " ), this );
     connect( item, &QAction::triggered, this, [ = ]( bool ) { addSymbol( QgsSymbol::Line ); } );
     mMenuBtnAddItemAll->addAction( item );
-    item = new QAction( QgsApplication::getThemeIcon( QStringLiteral( "mIconPolygonLayer.svg" ) ), tr( "Fill…" ), this );
+    item = new QAction( QgsApplication::getThemeIcon( QStringLiteral( "mIconPolygonLayer.svg" ) ), tr( "Fill… " ), this );
     connect( item, &QAction::triggered, this, [ = ]( bool ) { addSymbol( QgsSymbol::Fill ); } );
     mMenuBtnAddItemAll->addAction( item );
     mMenuBtnAddItemAll->addSeparator();
@@ -348,19 +348,19 @@ QgsStyleManagerDialog::QgsStyleManagerDialog( QgsStyle *style, QWidget *parent, 
       mMenuBtnAddItemColorRamp->addAction( new QAction( rampType, this ) );
     }
     mMenuBtnAddItemAll->addSeparator();
-    item = new QAction( QgsApplication::getThemeIcon( QStringLiteral( "mIconFieldText.svg" ) ), tr( "Text Format…" ), this );
+    item = new QAction( QgsApplication::getThemeIcon( QStringLiteral( "mIconFieldText.svg" ) ), tr( "Text Format… " ), this );
     connect( item, &QAction::triggered, this, [ = ]( bool ) { addTextFormat(); } );
     mMenuBtnAddItemAll->addAction( item );
     mMenuBtnAddItemAll->addSeparator();
-    item = new QAction( QgsApplication::getThemeIcon( QStringLiteral( "labelingSingle.svg" ) ), tr( "Point Label Settings…" ), this );
+    item = new QAction( QgsApplication::getThemeIcon( QStringLiteral( "labelingSingle.svg" ) ), tr( "Point Label Settings… " ), this );
     connect( item, &QAction::triggered, this, [ = ]( bool ) { addLabelSettings( QgsWkbTypes::PointGeometry ); } );
     mMenuBtnAddItemAll->addAction( item );
     mMenuBtnAddItemLabelSettings->addAction( item );
-    item = new QAction( QgsApplication::getThemeIcon( QStringLiteral( "labelingSingle.svg" ) ), tr( "Line Label Settings…" ), this );
+    item = new QAction( QgsApplication::getThemeIcon( QStringLiteral( "labelingSingle.svg" ) ), tr( "Line Label Settings… " ), this );
     connect( item, &QAction::triggered, this, [ = ]( bool ) {  addLabelSettings( QgsWkbTypes::LineGeometry ); } );
     mMenuBtnAddItemAll->addAction( item );
     mMenuBtnAddItemLabelSettings->addAction( item );
-    item = new QAction( QgsApplication::getThemeIcon( QStringLiteral( "labelingSingle.svg" ) ), tr( "Polygon Label Settings…" ), this );
+    item = new QAction( QgsApplication::getThemeIcon( QStringLiteral( "labelingSingle.svg" ) ), tr( "Polygon Label Settings… " ), this );
     connect( item, &QAction::triggered, this, [ = ]( bool ) {  addLabelSettings( QgsWkbTypes::PolygonGeometry ); } );
     mMenuBtnAddItemAll->addAction( item );
     mMenuBtnAddItemLabelSettings->addAction( item );
@@ -487,9 +487,9 @@ void QgsStyleManagerDialog::tabItemType_currentChanged( int )
   const bool isSymbol = currentItemType() != 3 && currentItemType() != 4 && currentItemType() != 5;
   const bool isColorRamp = currentItemType() == 3;
   const bool isTextFormat = currentItemType() == 4;
-  searchBox->setPlaceholderText( isSymbol ? tr( "Filter symbols…" ) :
-                                 isColorRamp ? tr( "Filter color ramps…" ) :
-                                 isTextFormat ? tr( "Filter text symbols…" ) : tr( "Filter label settings…" ) );
+  searchBox->setPlaceholderText( isSymbol ? tr( "Filter symbols… " ) :
+                                 isColorRamp ? tr( "Filter color ramps… " ) :
+                                 isTextFormat ? tr( "Filter text symbols… " ) : tr( "Filter label settings… " ) );
 
   if ( !mReadOnly && isColorRamp ) // color ramp tab
   {
@@ -747,7 +747,7 @@ int QgsStyleManagerDialog::copyItems( const QList<QgsStyleManagerDialog::ItemDet
         {
           cursorOverride.reset();
           int res = QMessageBox::warning( parentWidget, isImport ? tr( "Import Symbol" ) : tr( "Export Symbol" ),
-                                          tr( "A symbol with the name “%1” already exists.\nOverwrite?" )
+                                          tr( "A symbol with the name \"%1\" already exists.\nOverwrite?" )
                                           .arg( details.name ),
                                           QMessageBox::Yes | QMessageBox::YesToAll | QMessageBox::No | QMessageBox::NoToAll | QMessageBox::Cancel );
           cursorOverride = qgis::make_unique< QgsTemporaryCursorOverride >( Qt::WaitCursor );
@@ -800,7 +800,7 @@ int QgsStyleManagerDialog::copyItems( const QList<QgsStyleManagerDialog::ItemDet
         {
           cursorOverride.reset();
           int res = QMessageBox::warning( parentWidget, isImport ? tr( "Import Color Ramp" ) : tr( "Export Color Ramp" ),
-                                          tr( "A color ramp with the name “%1” already exists.\nOverwrite?" )
+                                          tr( "A color ramp with the name \"%1\" already exists.\nOverwrite?" )
                                           .arg( details.name ),
                                           QMessageBox::Yes | QMessageBox::YesToAll | QMessageBox::No | QMessageBox::NoToAll | QMessageBox::Cancel );
           cursorOverride = qgis::make_unique< QgsTemporaryCursorOverride >( Qt::WaitCursor );
@@ -851,7 +851,7 @@ int QgsStyleManagerDialog::copyItems( const QList<QgsStyleManagerDialog::ItemDet
         {
           cursorOverride.reset();
           int res = QMessageBox::warning( parentWidget, isImport ? tr( "Import Text Format" ) : tr( "Export Text Format" ),
-                                          tr( "A text format with the name “%1” already exists.\nOverwrite?" )
+                                          tr( "A text format with the name \"%1\" already exists.\nOverwrite?" )
                                           .arg( details.name ),
                                           QMessageBox::Yes | QMessageBox::YesToAll | QMessageBox::No | QMessageBox::NoToAll | QMessageBox::Cancel );
           cursorOverride = qgis::make_unique< QgsTemporaryCursorOverride >( Qt::WaitCursor );
@@ -901,7 +901,7 @@ int QgsStyleManagerDialog::copyItems( const QList<QgsStyleManagerDialog::ItemDet
         {
           cursorOverride.reset();
           int res = QMessageBox::warning( parentWidget, isImport ? tr( "Import Label Settings" ) : tr( "Export Label Settings" ),
-                                          tr( "Label settings with the name “%1” already exist.\nOverwrite?" )
+                                          tr( "Label settings with the name \"%1\" already exist.\nOverwrite?" )
                                           .arg( details.name ),
                                           QMessageBox::Yes | QMessageBox::YesToAll | QMessageBox::No | QMessageBox::NoToAll | QMessageBox::Cancel );
           cursorOverride = qgis::make_unique< QgsTemporaryCursorOverride >( Qt::WaitCursor );
@@ -1946,7 +1946,7 @@ int QgsStyleManagerDialog::addTag()
   int check = mStyle->tagId( itemName );
   if ( check > 0 )
   {
-    mMessageBar->pushCritical( tr( "Add Tag" ), tr( "The tag “%1” already exists." ).arg( itemName ) );
+    mMessageBar->pushCritical( tr( "Add Tag" ), tr( "The tag \"%1\" already exists." ).arg( itemName ) );
     return 0;
   }
 
@@ -2253,7 +2253,7 @@ void QgsStyleManagerDialog::listitemsContextMenu( QPoint point )
     {
       mGroupListMenu->addSeparator();
     }
-    a = new QAction( tr( "Create New Tag…" ), mGroupListMenu );
+    a = new QAction( tr( "Create New Tag… " ), mGroupListMenu );
     connect( a, &QAction::triggered, this, [ = ]( bool ) { tagSelectedSymbols( true ); }
            );
     mGroupListMenu->addAction( a );

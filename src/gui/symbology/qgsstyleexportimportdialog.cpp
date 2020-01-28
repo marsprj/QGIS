@@ -106,7 +106,7 @@ QgsStyleExportImportDialog::QgsStyleExportImportDialog( QgsStyle *style, QWidget
     mFavorite->setHidden( true );
     mIgnoreXMLTags->setHidden( true );
 
-    pb = new QPushButton( tr( "Select by Group…" ) );
+    pb = new QPushButton( tr( "Select by Group… " ) );
     buttonBox->addButton( pb, QDialogButtonBox::ActionRole );
     connect( pb, &QAbstractButton::clicked, this, &QgsStyleExportImportDialog::selectByGroup );
     tagLabel->setHidden( true );
@@ -395,7 +395,7 @@ void QgsStyleExportImportDialog::downloadStyleXml( const QUrl &url )
     mFileName = mTempFile->fileName();
 
     QProgressDialog *progressDlg = new QProgressDialog( this );
-    progressDlg->setLabelText( tr( "Downloading style…" ) );
+    progressDlg->setLabelText( tr( "Downloading style… " ) );
     progressDlg->setAutoClose( true );
     progressDlg->show();
 

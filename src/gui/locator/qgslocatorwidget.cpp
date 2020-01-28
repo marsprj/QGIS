@@ -316,7 +316,7 @@ void QgsLocatorWidget::configMenuAboutToShow()
     mMenu->addAction( action );
   }
   mMenu->addSeparator();
-  QAction *configAction = new QAction( tr( "Configure…" ), mMenu );
+  QAction *configAction = new QAction( tr( "Configure… " ), mMenu );
   connect( configAction, &QAction::triggered, this, &QgsLocatorWidget::configTriggered );
   mMenu->addAction( configAction );
 }

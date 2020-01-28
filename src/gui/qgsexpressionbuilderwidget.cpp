@@ -102,14 +102,14 @@ QgsExpressionBuilderWidget::QgsExpressionBuilderWidget( QWidget *parent )
   }
 
   txtSearchEdit->setShowSearchIcon( true );
-  txtSearchEdit->setPlaceholderText( tr( "Search…" ) );
+  txtSearchEdit->setPlaceholderText( tr( "Search… " ) );
 
   mValuesModel = qgis::make_unique<QStandardItemModel>();
   mProxyValues = qgis::make_unique<QSortFilterProxyModel>();
   mProxyValues->setSourceModel( mValuesModel.get() );
   mValuesListView->setModel( mProxyValues.get() );
   txtSearchEditValues->setShowSearchIcon( true );
-  txtSearchEditValues->setPlaceholderText( tr( "Search…" ) );
+  txtSearchEditValues->setPlaceholderText( tr( "Search… " ) );
 
   editorSplit->setSizes( QList<int>( {175, 300} ) );
 
@@ -341,8 +341,8 @@ void QgsExpressionBuilderWidget::updateFunctionFileList( const QString &path )
   {
     // Create default sample entry.
     newFunctionFile( "default" );
-    txtPython->setText( QString( "'''\n#Sample custom function file\n "
-                                 "(uncomment to use and customize or Add button to create a new file) \n%1 \n '''" ).arg( txtPython->text() ) );
+    txtPython->setText( QString( "'\''\n#Sample custom function file\n "
+                                 "(uncomment to use and customize or Add button to create a new file) \n%1 \n '\''" ).arg( txtPython->text() ) );
     saveFunctionFile( "default" );
   }
 }
@@ -1255,7 +1255,7 @@ void QgsExpressionBuilderWidget::loadAllUsedValues()
 
 void QgsExpressionBuilderWidget::txtPython_textChanged()
 {
-  lblAutoSave->setText( tr( "Saving…" ) );
+  lblAutoSave->setText( tr( "Saving… " ) );
   if ( mAutoSave )
   {
     autosave();

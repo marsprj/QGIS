@@ -89,11 +89,11 @@ void QgsBinaryWidgetWrapper::initWidget( QWidget *editor )
   {
     mButton->setPopupMode( QToolButton::InstantPopup );
 
-    mSetAction = new QAction( tr( "Embed File…" ), mButton );
+    mSetAction = new QAction( tr( "Embed File… " ), mButton );
     connect( mSetAction, &QAction::triggered, this, &QgsBinaryWidgetWrapper::setContent );
-    mClearAction = new QAction( tr( "Clear Contents…" ), mButton );
+    mClearAction = new QAction( tr( "Clear Contents… " ), mButton );
     connect( mClearAction, &QAction::triggered, this, &QgsBinaryWidgetWrapper::clear );
-    mSaveAction = new QAction( tr( "Save Contents to File…" ), mButton );
+    mSaveAction = new QAction( tr( "Save Contents to File… " ), mButton );
     connect( mSaveAction, &QAction::triggered, this, &QgsBinaryWidgetWrapper::saveContent );
     QMenu *menu = new QMenu( mButton );
     menu->addAction( mSetAction );

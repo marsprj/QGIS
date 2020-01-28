@@ -60,7 +60,7 @@ bool QgsLayoutScaleBarValidityCheck::prepareCheck( const QgsValidityCheckContext
       res.type = QgsValidityCheckResult::Warning;
       res.title = QObject::tr( "Scalebar is not linked to a map" );
       const QString name = bar->displayName().toHtmlEscaped();
-      res.detailedDescription = QObject::tr( "The scalebar “%1” is not linked to a map item. This scale will be misleading." ).arg( name );
+      res.detailedDescription = QObject::tr( "The scalebar \"%1\" is not linked to a map item. This scale will be misleading." ).arg( name );
       mResults.append( res );
     }
   }
@@ -117,7 +117,7 @@ bool QgsLayoutNorthArrowValidityCheck::prepareCheck( const QgsValidityCheckConte
       res.type = QgsValidityCheckResult::Warning;
       res.title = QObject::tr( "North arrow is not linked to a map" );
       const QString name = picture->displayName().toHtmlEscaped();
-      res.detailedDescription = QObject::tr( "The north arrow “%1” is not linked to a map item. The arrow orientation may be misleading." ).arg( name );
+      res.detailedDescription = QObject::tr( "The north arrow \"%1\" is not linked to a map item. The arrow orientation may be misleading." ).arg( name );
       mResults.append( res );
     }
   }
@@ -173,7 +173,7 @@ bool QgsLayoutOverviewValidityCheck::prepareCheck( const QgsValidityCheckContext
         res.type = QgsValidityCheckResult::Warning;
         res.title = QObject::tr( "Overview is not linked to a map" );
         const QString name = map->displayName().toHtmlEscaped();
-        res.detailedDescription = QObject::tr( "The map “%1” includes an overview (“%2”) which is not linked to a map item." ).arg( name, overview->name() );
+        res.detailedDescription = QObject::tr( "The map \"%1\" includes an overview (\"%2\") which is not linked to a map item." ).arg( name, overview->name() );
         mResults.append( res );
       }
     }
@@ -231,7 +231,7 @@ bool QgsLayoutPictureSourceValidityCheck::prepareCheck( const QgsValidityCheckCo
       const QUrl picUrl = QUrl::fromUserInput( picture->evaluatedPath() );
       const bool isLocalFile = picUrl.isLocalFile();
 
-      res.detailedDescription = QObject::tr( "The source for picture “%1” could not be loaded or is corrupt:<p>%2" ).arg( name,
+      res.detailedDescription = QObject::tr( "The source for picture \"%1\" could not be loaded or is corrupt:<p>%2" ).arg( name,
                                 isLocalFile ? QDir::toNativeSeparators( picture->evaluatedPath() ) : picture->evaluatedPath() );
       mResults.append( res );
     }

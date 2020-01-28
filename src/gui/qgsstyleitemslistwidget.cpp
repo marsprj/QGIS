@@ -120,7 +120,7 @@ QgsStyleItemsListWidget::QgsStyleItemsListWidget( QWidget *parent )
   QgsFilterLineEdit *groupEdit = new QgsFilterLineEdit();
   groupEdit->setShowSearchIcon( true );
   groupEdit->setShowClearButton( true );
-  groupEdit->setPlaceholderText( tr( "Filter symbols…" ) );
+  groupEdit->setPlaceholderText( tr( "Filter symbols… " ) );
   groupsCombo->setLineEdit( groupEdit );
 
   connect( btnSaveSymbol, &QPushButton::clicked, this, &QgsStyleItemsListWidget::saveEntity );
@@ -159,28 +159,28 @@ void QgsStyleItemsListWidget::setEntityType( QgsStyle::StyleEntity type )
   switch ( type )
   {
     case QgsStyle::SymbolEntity:
-      btnSaveSymbol->setText( tr( "Save Symbol…" ) );
+      btnSaveSymbol->setText( tr( "Save Symbol… " ) );
       btnSaveSymbol->setToolTip( tr( "Save symbol to styles" ) );
       if ( allGroup >= 0 )
         groupsCombo->setItemText( allGroup, tr( "All Symbols" ) );
       break;
 
     case QgsStyle::ColorrampEntity:
-      btnSaveSymbol->setText( tr( "Save Color Ramp…" ) );
+      btnSaveSymbol->setText( tr( "Save Color Ramp… " ) );
       btnSaveSymbol->setToolTip( tr( "Save color ramp to styles" ) );
       if ( allGroup >= 0 )
         groupsCombo->setItemText( allGroup, tr( "All Color Ramps" ) );
       break;
 
     case QgsStyle::TextFormatEntity:
-      btnSaveSymbol->setText( tr( "Save Format…" ) );
+      btnSaveSymbol->setText( tr( "Save Format… " ) );
       btnSaveSymbol->setToolTip( tr( "Save text format to styles" ) );
       if ( allGroup >= 0 )
         groupsCombo->setItemText( allGroup, tr( "All Text Formats" ) );
       break;
 
     case QgsStyle::LabelSettingsEntity:
-      btnSaveSymbol->setText( tr( "Save Label Settings…" ) );
+      btnSaveSymbol->setText( tr( "Save Label Settings… " ) );
       btnSaveSymbol->setToolTip( tr( "Save label settings to styles" ) );
       if ( allGroup >= 0 )
         groupsCombo->setItemText( allGroup, tr( "All Label Settings" ) );
@@ -201,7 +201,7 @@ void QgsStyleItemsListWidget::setEntityTypes( const QList<QgsStyle::StyleEntity>
   const int allGroup = groupsCombo->findData( QVariant( "all" ) );
   if ( filters.length() == 2 && filters.contains( QgsStyle::LabelSettingsEntity ) && filters.contains( QgsStyle::TextFormatEntity ) )
   {
-    btnSaveSymbol->setText( tr( "Save Settings…" ) );
+    btnSaveSymbol->setText( tr( "Save Settings… " ) );
     btnSaveSymbol->setToolTip( tr( "Save label settings or text format to styles" ) );
     if ( allGroup >= 0 )
       groupsCombo->setItemText( allGroup, tr( "All Settings" ) );

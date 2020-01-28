@@ -37,7 +37,7 @@ void QgsOgrItemGuiProvider::populateContextMenu(
   if ( QgsOgrLayerItem *layerItem = qobject_cast< QgsOgrLayerItem * >( item ) )
   {
     // Messages are different for files and tables
-    QString message = layerItem->isSubLayer() ? QObject::tr( "Delete Layer “%1”…" ).arg( layerItem->name() ) : QObject::tr( "Delete File “%1”…" ).arg( layerItem->name() );
+    QString message = layerItem->isSubLayer() ? QObject::tr( "Delete Layer \"%1\"… " ).arg( layerItem->name() ) : QObject::tr( "Delete File \"%1\"… " ).arg( layerItem->name() );
     QAction *actionDeleteLayer = new QAction( message, layerItem->parent() );
     QVariantMap data;
     data.insert( QStringLiteral( "isSubLayer" ), layerItem->isSubLayer() );
@@ -53,7 +53,7 @@ void QgsOgrItemGuiProvider::populateContextMenu(
   {
     const bool isFolder = QFileInfo( collectionItem->path() ).isDir();
     // Messages are different for files and tables
-    QString message = QObject::tr( "Delete %1 “%2”…" ).arg( isFolder ? tr( "Folder" ) : tr( "File" ), collectionItem->name() );
+    QString message = QObject::tr( "Delete %1 \"%2\"… " ).arg( isFolder ? tr( "Folder" ) : tr( "File" ), collectionItem->name() );
     QAction *actionDeleteCollection = new QAction( message, collectionItem->parent() );
 
     QVariantMap data;

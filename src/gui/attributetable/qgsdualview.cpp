@@ -743,7 +743,7 @@ void QgsDualView::showViewHeaderMenu( QPoint point )
   connect( hide, &QAction::triggered, this, &QgsDualView::hideColumn );
   hide->setData( col );
   mHorizontalHeaderMenu->addAction( hide );
-  QAction *setWidth = new QAction( tr( "&Set Width…" ), mHorizontalHeaderMenu );
+  QAction *setWidth = new QAction( tr( "&Set Width… " ), mHorizontalHeaderMenu );
   connect( setWidth, &QAction::triggered, this, &QgsDualView::resizeColumn );
   setWidth->setData( col );
   mHorizontalHeaderMenu->addAction( setWidth );
@@ -753,10 +753,10 @@ void QgsDualView::showViewHeaderMenu( QPoint point )
   mHorizontalHeaderMenu->addAction( optimizeWidth );
 
   mHorizontalHeaderMenu->addSeparator();
-  QAction *organize = new QAction( tr( "&Organize Columns…" ), mHorizontalHeaderMenu );
+  QAction *organize = new QAction( tr( "&Organize Columns… " ), mHorizontalHeaderMenu );
   connect( organize, &QAction::triggered, this, &QgsDualView::organizeColumns );
   mHorizontalHeaderMenu->addAction( organize );
-  QAction *sort = new QAction( tr( "&Sort…" ), mHorizontalHeaderMenu );
+  QAction *sort = new QAction( tr( "&Sort… " ), mHorizontalHeaderMenu );
   connect( sort, &QAction::triggered, this, &QgsDualView::modifySort );
   mHorizontalHeaderMenu->addAction( sort );
 
@@ -1064,7 +1064,7 @@ void QgsDualView::progress( int i, bool &cancel )
 {
   if ( !mProgressDlg )
   {
-    mProgressDlg = new QProgressDialog( tr( "Loading features…" ), tr( "Abort" ), 0, 0, this );
+    mProgressDlg = new QProgressDialog( tr( "Loading features… " ), tr( "Abort" ), 0, 0, this );
     mProgressDlg->setWindowTitle( tr( "Attribute Table" ) );
     mProgressDlg->setWindowModality( Qt::WindowModal );
     mProgressDlg->show();

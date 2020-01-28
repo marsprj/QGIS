@@ -42,15 +42,15 @@ QgsAbstractFileContentSourceLineEdit::QgsAbstractFileContentSourceLineEdit( QWid
 
   QMenu *sourceMenu = new QMenu( mFileToolButton );
 
-  QAction *selectFileAction = new QAction( tr( "Select File…" ), sourceMenu );
+  QAction *selectFileAction = new QAction( tr( "Select File… " ), sourceMenu );
   connect( selectFileAction, &QAction::triggered, this, &QgsAbstractFileContentSourceLineEdit::selectFile );
   sourceMenu->addAction( selectFileAction );
 
-  QAction *embedFileAction = new QAction( tr( "Embed File…" ), sourceMenu );
+  QAction *embedFileAction = new QAction( tr( "Embed File… " ), sourceMenu );
   connect( embedFileAction, &QAction::triggered, this, &QgsAbstractFileContentSourceLineEdit::embedFile );
   sourceMenu->addAction( embedFileAction );
 
-  QAction *extractFileAction = new QAction( tr( "Extract Embedded File…" ), sourceMenu );
+  QAction *extractFileAction = new QAction( tr( "Extract Embedded File… " ), sourceMenu );
   connect( extractFileAction, &QAction::triggered, this, &QgsAbstractFileContentSourceLineEdit::extractFile );
   sourceMenu->addAction( extractFileAction );
 
@@ -59,7 +59,7 @@ QgsAbstractFileContentSourceLineEdit::QgsAbstractFileContentSourceLineEdit( QWid
     extractFileAction->setEnabled( mMode == ModeBase64 );
   } );
 
-  QAction *enterUrlAction = new QAction( tr( "From URL…" ), sourceMenu );
+  QAction *enterUrlAction = new QAction( tr( "From URL… " ), sourceMenu );
   connect( enterUrlAction, &QAction::triggered, this, &QgsAbstractFileContentSourceLineEdit::selectUrl );
   sourceMenu->addAction( enterUrlAction );
 

@@ -72,8 +72,8 @@ void QgsGdalItemGuiProvider::onDeleteLayer()
 
   if ( ! projectLayer )
   {
-    const QString confirmMessage = isPostgresRaster  ? tr( "Are you sure you want to delete table “%1”?" ).arg( path ) :
-                                   tr( "Are you sure you want to delete file “%1”?" ).arg( path );
+    const QString confirmMessage = isPostgresRaster  ? tr( "Are you sure you want to delete table \"%1\"?" ).arg( path ) :
+                                   tr( "Are you sure you want to delete file \"%1\"?" ).arg( path );
 
     if ( QMessageBox::question( nullptr, title,
                                 confirmMessage,
@@ -152,7 +152,7 @@ void QgsGdalItemGuiProvider::onDeleteLayer()
   }
   else
   {
-    QMessageBox::warning( nullptr, title, QObject::tr( "The layer “%1” cannot be deleted because it is in the current project as “%2”,"
+    QMessageBox::warning( nullptr, title, QObject::tr( "The layer \"%1\" cannot be deleted because it is in the current project as \"%2\","
                           " remove it from the project and retry." ).arg( path, projectLayer->name() ) );
   }
 }
@@ -167,8 +167,8 @@ void QgsGdalItemGuiProvider::populateContextMenu( QgsDataItem *item, QMenu *menu
     // Messages are different for files and tables
     bool isPostgresRaster { layerItem->uri().startsWith( QStringLiteral( "PG:" ) ) };
     const QString message = isPostgresRaster  ?
-                            QObject::tr( "Delete Table “%1”…" ).arg( layerItem->name() ) :
-                            QObject::tr( "Delete File “%1”…" ).arg( layerItem->name() );
+                            QObject::tr( "Delete Table \"%1\"… " ).arg( layerItem->name() ) :
+                            QObject::tr( "Delete File \"%1\"… " ).arg( layerItem->name() );
     QAction *actionDeleteLayer = new QAction( message, menu );
     QVariantMap data;
     data.insert( QStringLiteral( "uri" ), layerItem->uri() );

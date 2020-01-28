@@ -1,4 +1,4 @@
-/***************************************************************************
+﻿/***************************************************************************
                          qgscolorrampshaderwidget.cpp
                          ----------------------------
     begin                : Jun 2018
@@ -58,8 +58,8 @@ QgsColorRampShaderWidget::QgsColorRampShaderWidget( QWidget *parent )
   connect( mClassificationModeComboBox, static_cast<void ( QComboBox::* )( int )>( &QComboBox::currentIndexChanged ), this, &QgsColorRampShaderWidget::mClassificationModeComboBox_currentIndexChanged );
 
   contextMenu = new QMenu( tr( "Options" ), this );
-  contextMenu->addAction( tr( "Change Color…" ), this, SLOT( changeColor() ) );
-  contextMenu->addAction( tr( "Change Opacity…" ), this, SLOT( changeOpacity() ) );
+  contextMenu->addAction( tr( "Change Color… " ), this, SLOT( changeColor() ) );
+  contextMenu->addAction( tr( "Change Opacity… " ), this, SLOT( changeOpacity() ) );
 
   mSwatchDelegate = new QgsColorSwatchDelegate( this );
   mColormapTreeWidget->setItemDelegateForColumn( ColorColumn, mSwatchDelegate );

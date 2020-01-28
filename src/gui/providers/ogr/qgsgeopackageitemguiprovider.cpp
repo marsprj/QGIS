@@ -48,7 +48,7 @@ void QgsGeoPackageItemGuiProvider::populateContextMenu( QgsDataItem *item, QMenu
     // Check capabilities
     if ( layerItem->capabilities2() & QgsDataItem::Capability::Rename )
     {
-      QAction *actionRenameLayer = new QAction( tr( "Rename Layer '%1'…" ).arg( layerItem->name() ), this );
+      QAction *actionRenameLayer = new QAction( tr( "Rename Layer '%1'… " ).arg( layerItem->name() ), this );
       QVariantMap data;
       data.insert( QStringLiteral( "uri" ), layerItem->uri() );
       data.insert( QStringLiteral( "key" ), layerItem->providerKey() );
@@ -63,11 +63,11 @@ void QgsGeoPackageItemGuiProvider::populateContextMenu( QgsDataItem *item, QMenu
 
   if ( QgsGeoPackageRootItem *rootItem = qobject_cast< QgsGeoPackageRootItem * >( item ) )
   {
-    QAction *actionNew = new QAction( tr( "New Connection…" ), rootItem->parent() );
+    QAction *actionNew = new QAction( tr( " New Connection… " ), rootItem->parent() );
     connect( actionNew, &QAction::triggered, rootItem, &QgsGeoPackageRootItem::newConnection );
     menu->addAction( actionNew );
 
-    QAction *actionCreateDatabase = new QAction( tr( "Create Database…" ), rootItem->parent() );
+    QAction *actionCreateDatabase = new QAction( tr( "Create Database… " ), rootItem->parent() );
     QVariantMap data;
     data.insert( QStringLiteral( "item" ), QVariant::fromValue( QPointer< QgsGeoPackageRootItem >( rootItem ) ) );
     actionCreateDatabase->setData( data );
@@ -92,7 +92,7 @@ void QgsGeoPackageItemGuiProvider::populateContextMenu( QgsDataItem *item, QMenu
     }
 
     // Add table to existing DB
-    QAction *actionAddTable = new QAction( tr( "Create a New Layer or Table…" ), collectionItem->parent() );
+    QAction *actionAddTable = new QAction( tr( "Create a New Layer or Table… " ), collectionItem->parent() );
     QPointer<QgsGeoPackageCollectionItem>collectionItemPtr { collectionItem };
     const QString itemPath = collectionItem->path();
     connect( actionAddTable, &QAction::triggered, actionAddTable, [ collectionItemPtr, itemPath ]
@@ -115,7 +115,7 @@ void QgsGeoPackageItemGuiProvider::populateContextMenu( QgsDataItem *item, QMenu
     sep->setSeparator( true );
     menu->addAction( sep );
 
-    QString message = QObject::tr( "Delete %1…" ).arg( collectionItem->name() );
+    QString message = QObject::tr( "Delete %1… " ).arg( collectionItem->name() );
     QAction *actionDelete = new QAction( message, collectionItem->parent() );
     QVariantMap dataDelete;
     dataDelete.insert( QStringLiteral( "path" ), collectionItem->path() );

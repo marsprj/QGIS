@@ -1,4 +1,4 @@
-/***************************************************************************
+﻿/***************************************************************************
                              qgslayoutitemslistview.cpp
                              --------------------------
     Date                 : October 2017
@@ -130,7 +130,7 @@ void QgsLayoutItemsListView::showContextMenu( QPoint point )
   menu->addAction( deleteAction );
   menu->addSeparator();
 
-  QAction *itemPropertiesAction = new QAction( tr( "Item Properties…" ), menu );
+  QAction *itemPropertiesAction = new QAction( tr( "Item Properties… " ), menu );
   connect( itemPropertiesAction, &QAction::triggered, this, [this, item]()
   {
     mDesigner->showItemOptions( item, true );

@@ -160,7 +160,7 @@ QList<QgsMapToolIdentify::IdentifyResult> QgsMapToolIdentify::identify( const Qg
         layer = layerList.value( i );
 
       emit identifyProgress( i, mCanvas->layerCount() );
-      emit identifyMessage( tr( "Identifying on %1…" ).arg( layer->name() ) );
+      emit identifyMessage( tr( "Identifying on %1… " ).arg( layer->name() ) );
 
       if ( !layer->flags().testFlag( QgsMapLayer::Identifiable ) )
         continue;

@@ -319,7 +319,7 @@ QString QgsProcessingToolboxModel::toolTipForAlgorithm( const QgsProcessingAlgor
   return QStringLiteral( "<p><b>%1</b></p>%2<p>%3</p>%4" ).arg(
            algorithm->displayName(),
            !algorithm->shortDescription().isEmpty() ? QStringLiteral( "<p>%1</p>" ).arg( algorithm->shortDescription() ) : QString(),
-           QObject::tr( "Algorithm ID: ‘%1’" ).arg( QStringLiteral( "<i>%1</i>" ).arg( algorithm->id() ) ),
+           QObject::tr( "Algorithm ID: '%1'" ).arg( QStringLiteral( "<i>%1</i>" ).arg( algorithm->id() ) ),
            algorithm->flags() & QgsProcessingAlgorithm::FlagKnownIssues ? QStringLiteral( "<b style=\"color:red\">%1</b>" ).arg( QObject::tr( "Warning: Algorithm has known issues" ) ) : QString()
          );
 }

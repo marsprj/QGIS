@@ -62,7 +62,7 @@ void QgsMapCanvasSnappingUtils::canvasMapToolChanged()
 void QgsMapCanvasSnappingUtils::prepareIndexStarting( int count )
 {
   QApplication::setOverrideCursor( Qt::WaitCursor );
-  mProgress = new QProgressDialog( tr( "Indexing data…" ), QString(), 0, count, mCanvas->topLevelWidget() );
+  mProgress = new QProgressDialog( tr( "Indexing data… " ), QString(), 0, count, mCanvas->topLevelWidget() );
   mProgress->setWindowModality( Qt::WindowModal );
 }
 
